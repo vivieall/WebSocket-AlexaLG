@@ -1,0 +1,1508 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "sistema stay",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "ListServiceIntent",
+          "slots": [
+            {
+              "name": "service",
+              "type": "Service"
+            },
+            {
+              "name": "startBooking",
+              "type": "Confirm"
+            },
+            {
+              "name": "serviceName",
+              "type": "AMAZON.Corporation"
+            },
+            {
+              "name": "date",
+              "type": "AMAZON.DATE"
+            },
+            {
+              "name": "time",
+              "type": "bookingTime"
+            },
+            {
+              "name": "confirm",
+              "type": "Confirm"
+            }
+          ],
+          "samples": [
+            "muestrame los {service} disponibles",
+            "muestrame los {service} del hotel",
+            "muestrame los servicios del hotel",
+            "quiero ver los servicios del hotel",
+            "muestrame todas las {service}",
+            "muestrame todos los {service}",
+            "quiero ver todas las {service}",
+            "quiero ver todos los {service}"
+          ]
+        },
+        {
+          "name": "FindServiceIntent",
+          "slots": [
+            {
+              "name": "service",
+              "type": "Service"
+            },
+            {
+              "name": "name",
+              "type": "AMAZON.Corporation"
+            }
+          ],
+          "samples": [
+            "quiero buscar un {service}",
+            "quiero ver la informacion de un {service}",
+            "muestrame la {service} {name}",
+            "muestrame el {service} {name}",
+            "quiero buscar la {service} {name}",
+            "quiero buscar el {service} {name}"
+          ]
+        },
+        {
+          "name": "GetWeatherForecastIntent",
+          "slots": [],
+          "samples": [
+            "quiero ver la información del clima",
+            "quiero ver el clima",
+            "permite ver el clima de la semana",
+            "muestrame el clima",
+            "muestrame la informacion del clima"
+          ]
+        },
+        {
+          "name": "HelpYouCommands",
+          "slots": [],
+          "samples": [
+            "que puedo hacer en el sistema"
+          ]
+        },
+        {
+          "name": "WatchNewsIntent",
+          "slots": [
+            {
+              "name": "topic",
+              "type": "NewsTopics"
+            }
+          ],
+          "samples": [
+            "muestrame las noticias de {topic}",
+            "quiero ver las noticias de {topic}",
+            "muestrame las noticias",
+            "quiero ver las noticias"
+          ]
+        },
+        {
+          "name": "HigthSpeedInternetIntent",
+          "slots": [
+            {
+              "name": "confirmation_request",
+              "type": "Confirm"
+            }
+          ],
+          "samples": []
+        },
+        {
+          "name": "RequestHigherInternetIntent",
+          "slots": [],
+          "samples": [
+            "Aumenta mi velocidad de internet",
+            "Como puedo conseguir un internet mas rapido",
+            "Ayudame a aumentar la velocidad del internet",
+            "Como puedo aumente la velocidad del internet",
+            "Porque mi internet es tan lento",
+            "Como puedo conseguir una mejor velocidad del internet"
+          ]
+        },
+        {
+          "name": "ShowInfoInternetPackageIntent",
+          "slots": [
+            {
+              "name": "internetPackage",
+              "type": "AMAZON.Corporation"
+            }
+          ],
+          "samples": [
+            "Dime mas sobre el paquete de internet {internetPackage}",
+            "Dime mas sobre el paquete {internetPackage}",
+            "Muestrame mas del paquete de internet {internetPackage}",
+            "Muestrame los paquetes de internet disponibles",
+            "Explicame mas sobre el paquete de internet {internetPackage}",
+            "Muestrame la informacion del paquete {internetPackage}"
+          ]
+        },
+        {
+          "name": "BuyInternetPackageIntent",
+          "slots": [
+            {
+              "name": "internetPackage",
+              "type": "AMAZON.Corporation"
+            },
+            {
+              "name": "numberDays",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "Quiero comprar el paquete de internet {internetPackage}",
+            "Comprar el paquete {internetPackage}",
+            "Comprar el paquete {internetPackage} por {numberDays}",
+            "Deseo subscribirme el paquete de internet {internetPackage} por {numberDays} dias.",
+            "Deseo comprar el paquete de internet {internetPackage} por {numberDays} dias.",
+            "Quiero comprar el paquete de internet {internetPackage} por {numberDays} dias.",
+            "Quiero subscribirme el paquete de internet {internetPackage} por {numberDays} dias."
+          ]
+        },
+        {
+          "name": "RequestInRoomDiningIntent",
+          "slots": [],
+          "samples": [
+            "Pediré comida en la habitación",
+            "Ayudame a pedir comida en la habitación",
+            "Quiero pedir comida en la habitación",
+            "Como puedo pedir comida en la habitación",
+            "Me gustaria pedir comida en la habitación"
+          ]
+        },
+        {
+          "name": "StoreProductIntent",
+          "slots": [
+            {
+              "name": "confirmChangeCategory",
+              "type": "Confirm"
+            },
+            {
+              "name": "productCategory",
+              "type": "AMAZON.Food"
+            },
+            {
+              "name": "confirmStartBuy",
+              "type": "Confirm"
+            },
+            {
+              "name": "productName",
+              "type": "AMAZON.Food"
+            },
+            {
+              "name": "confirmEndBuy",
+              "type": "Confirm"
+            }
+          ],
+          "samples": [
+            "Muestrame la tienda de productos",
+            "Muestrame la tienda en linea",
+            "Abre la tienda online",
+            "Abre la tienda de productos",
+            "Abre la tienda en linea",
+            "Muestrame la tienda del hotel",
+            "Muestrame la tienda online"
+          ]
+        },
+        {
+          "name": "BuyProductIntent",
+          "slots": [
+            {
+              "name": "productName",
+              "type": "AMAZON.Food"
+            },
+            {
+              "name": "productCategory",
+              "type": "AMAZON.Food"
+            },
+            {
+              "name": "confirmTransaction",
+              "type": "Confirm"
+            }
+          ],
+          "samples": [
+            "Compra un producto",
+            "Quiero comprar un producto",
+            "Compra la {productName}",
+            "Compra el {productName}",
+            "Compra el producto {productName}",
+            "Comprar la {productName}",
+            "Comprar el {productName}",
+            "Quiero comprar la {productCategory} {productName}",
+            "Quiero comprar el producto {productName}",
+            "Comprar el producto {productName}"
+          ]
+        },
+        {
+          "name": "ListPlaceInterestIntent",
+          "slots": [
+            {
+              "name": "confirmChangePlaceType",
+              "type": "Confirm"
+            },
+            {
+              "name": "placeType",
+              "type": "AMAZON.Corporation"
+            }
+          ],
+          "samples": [
+            "Quiero ver los lugares de interés",
+            "Muestrame los lugares de interés",
+            "Muestrame los lugares de interes",
+            "Quiero ver los lugares de interes"
+          ]
+        },
+        {
+          "name": "AddressTouristicPlacesIntent",
+          "slots": [
+            {
+              "name": "touristicPlace",
+              "type": "AMAZON.Corporation"
+            }
+          ],
+          "samples": [
+            "Indicame como llego a la {touristicPlace}",
+            "Indicame como llego al {touristicPlace}",
+            "Indicame como llegar al {touristicPlace}",
+            "Como llegar al {touristicPlace}",
+            "Como llego al {touristicPlace}",
+            "Como llegar a la {touristicPlace}",
+            "Como llego a la {touristicPlace}"
+          ]
+        },
+        {
+          "name": "AccountStateIntent",
+          "slots": [],
+          "samples": [
+            "Quiero ver mi resumen de cuenta",
+            "Quiero ver el resumen de mi cuenta",
+            "Muestrame el resumen de mi cuenta",
+            "Muestrame mi resumen de cuenta",
+            "Muestrame el historial de compras",
+            "Muestrame el historial de transacciones",
+            "Muestrame el estado de cuenta",
+            "Quiero ver el estado de cuenta",
+            "Quiero ver el historial de transacciones",
+            "Quiero ver mi historial de compra",
+            "Quiero ver mi estado de cuenta"
+          ]
+        },
+        {
+          "name": "requestPillowInRoomIntent",
+          "slots": [],
+          "samples": [
+            "puedes traer almohadas adicionales a mi habitacion"
+          ]
+        },
+        {
+          "name": "ShowEventsIntent",
+          "slots": [
+            {
+              "name": "eventType",
+              "type": "eventType"
+            }
+          ],
+          "samples": [
+            "muestrame los eventos de {eventType}",
+            "quiero ver los eventos de {eventType} ",
+            "Muestra los eventos a los que puedo asistir",
+            "cuales son los eventos mas recientes",
+            "A que eventos puedo asistir",
+            "a que eventos puedo asistir cerca al hotel",
+            "Que eventos tendran lugar cerca al hotel",
+            "Cuales son los eventos mas proximos",
+            "Cuales son los eventos cerca al hotel",
+            "Quiero ver los eventos mas proximos",
+            "Quiero ver la informacion de los eventos cerca al hotel",
+            "Quiero ver los eventos que tendran lugar cerca al hotel",
+            "Quiero visualizar los eventos cerca al hotel",
+            "Quiero ver los eventos cerca al hotel"
+          ]
+        },
+        {
+          "name": "ListDishesRestaurantIntent",
+          "slots": [
+            {
+              "name": "restaurantName",
+              "type": "AMAZON.Corporation"
+            },
+            {
+              "name": "dishType",
+              "type": "AMAZON.Food"
+            }
+          ],
+          "samples": [
+            "Muestrame las {dishType} del restaurante {restaurantName}",
+            "Quiero ver las {dishType} del restaurante {restaurantName}",
+            "Que hay para {dishType}",
+            "Que hay hoy para {dishType}",
+            "Quiero ver la carta de comida del restaurante {restaurantName}",
+            "Muestrame los {dishType} del restaurante {restaurantName}",
+            "Quiero ver los {dishType} del restaurante {restaurantName}",
+            "Quiero los platos de comida que ofrece el restaurante {restaurantName}",
+            "Quiero ver el menu del restaurante {restaurantName}"
+          ]
+        },
+        {
+          "name": "BookingServicesIntent",
+          "slots": [
+            {
+              "name": "serviceType",
+              "type": "Service",
+              "samples": [
+                "{serviceType}",
+                "un {serviceType}"
+              ]
+            },
+            {
+              "name": "serviceName",
+              "type": "AMAZON.Corporation"
+            },
+            {
+              "name": "dishType",
+              "type": "AMAZON.Food"
+            },
+            {
+              "name": "date",
+              "type": "AMAZON.DATE"
+            },
+            {
+              "name": "hour",
+              "type": "bookingTime"
+            },
+            {
+              "name": "confirm",
+              "type": "Confirm"
+            },
+            {
+              "name": "dishName",
+              "type": "AMAZON.Corporation"
+            }
+          ],
+          "samples": [
+            "quiero reservar un {serviceType}",
+            "quiero reservar el dia {date} el {serviceType} {serviceName} a las {hour}",
+            "quiero reservar {date} el {serviceType} {serviceName} a las {hour}",
+            "quiero reservar el {serviceType} {serviceName}"
+          ]
+        },
+        {
+          "name": "BookingHistoryIntent",
+          "slots": [],
+          "samples": [
+            "Quiero ver las reservas",
+            "Quiero ver mis reservas",
+            "Muestrame las reservas",
+            "Muestrame mis reservas",
+            "Muestrame el historial de reservas",
+            "Muestrame mi historial de reservas",
+            "Quiero ver el historial de reservas"
+          ]
+        },
+        {
+          "name": "ChangeMenuOptionIntent",
+          "slots": [
+            {
+              "name": "menuOption",
+              "type": "AMAZON.Corporation"
+            }
+          ],
+          "samples": [
+            "Cambia a {menuOption}"
+          ]
+        },
+        {
+          "name": "ListFacilitiesIntent",
+          "slots": [],
+          "samples": [
+            "Cuales son las instalaciones del hotel",
+            "Quiero ver las instalaciones",
+            "Muestrame las intalaciones del hotel"
+          ]
+        },
+        {
+          "name": "TellMeMoreIntent",
+          "slots": [
+            {
+              "name": "name",
+              "type": "AMAZON.Corporation"
+            }
+          ],
+          "samples": [
+            "Dime mas sobre las {name}",
+            "Dime mas sobre los {name}",
+            "Dime mas sobre el {name}",
+            "Dime mas sobre la {name}",
+            "Dime mas de la {name}",
+            "Dime mas sobre {name}",
+            "Dime mas del {name}",
+            "Quiero mas informacion sobre {name}",
+            "Dime más sobre {name}"
+          ]
+        },
+        {
+          "name": "ChangeLanguageIntent",
+          "slots": [
+            {
+              "name": "language",
+              "type": "AMAZON.Language"
+            }
+          ],
+          "samples": [
+            "quiero cambiar el idioma a {language} ",
+            "modifica el lenguaje a {language}",
+            "cambia el lenguaje a {language}",
+            "modifica el idioma",
+            "modifica el idioma a {language}",
+            "cambia el idioma a {language}",
+            "cambia el idioma",
+            "Modifica el lenguaje del televisor",
+            "Cambia el lenguaje del televisor",
+            "Cambia el lenguaje del televisor a {language}",
+            "Modifica el idioma del televisor a {language}",
+            "Cambia el idioma del televisor a {language}"
+          ]
+        },
+        {
+          "name": "ChangeCurrencyIntent",
+          "slots": [
+            {
+              "name": "currencyType",
+              "type": "AMAZON.Corporation"
+            }
+          ],
+          "samples": [
+            "Quiero cambiar el tipo de moneda a {currencyType}",
+            "Quiero cambiar el tipo de moneda",
+            "Cambia la moneda a {currencyType}",
+            "Modifica el tipo de moneda",
+            "Modifica el tipo de moneda a {currencyType}",
+            "Cambia el tipo de moneda a {currencyType}",
+            "Cambia el tipo de moneda"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "4",
+              "name": {
+                "value": "local",
+                "synonyms": [
+                  "locales"
+                ]
+              }
+            },
+            {
+              "id": "3",
+              "name": {
+                "value": "spa",
+                "synonyms": [
+                  "spas"
+                ]
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "gimnasio",
+                "synonyms": [
+                  "gym",
+                  "gyms",
+                  "gimnasios"
+                ]
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "restaurante",
+                "synonyms": [
+                  "restaurants",
+                  "restaurant",
+                  "restaurantes"
+                ]
+              }
+            }
+          ],
+          "name": "Service"
+        },
+        {
+          "values": [
+            {
+              "id": "2",
+              "name": {
+                "value": "no",
+                "synonyms": [
+                  "ya no",
+                  "mejor no",
+                  "creo que no",
+                  "aun no",
+                  "creo que no",
+                  "en absoluto",
+                  "no gracias",
+                  "de ninguna manera",
+                  "negativo",
+                  "No gracias",
+                  "En absoluto"
+                ]
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "si",
+                "synonyms": [
+                  "sí",
+                  "confirmado",
+                  "de todas formas",
+                  "de todas maneras",
+                  "si por favor",
+                  "sin lugar a dudas",
+                  "esta bien",
+                  "afirmo",
+                  "claro que si",
+                  "afirmativo",
+                  "positivo",
+                  "evidentemente",
+                  "efectivamente",
+                  "Sin lugar a dudas",
+                  "Claro que si"
+                ]
+              }
+            }
+          ],
+          "name": "Confirm"
+        },
+        {
+          "values": [
+            {
+              "id": "2",
+              "name": {
+                "value": "ciencia"
+              }
+            },
+            {
+              "id": "3",
+              "name": {
+                "value": "politica"
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "entretenimiento"
+              }
+            },
+            {
+              "id": "4",
+              "name": {
+                "value": "tecnologia"
+              }
+            },
+            {
+              "id": "0",
+              "name": {
+                "value": "deportes"
+              }
+            }
+          ],
+          "name": "NewsTopics"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "regular"
+              }
+            },
+            {
+              "name": {
+                "value": "premium"
+              }
+            },
+            {
+              "name": {
+                "value": "basico"
+              }
+            }
+          ],
+          "name": "internetPackage"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "bebidas alcoholicas"
+              }
+            },
+            {
+              "name": {
+                "value": "utilidades"
+              }
+            },
+            {
+              "name": {
+                "value": "postres"
+              }
+            },
+            {
+              "name": {
+                "value": "bebidas"
+              }
+            }
+          ],
+          "name": "productCategory"
+        },
+        {
+          "values": [
+            {
+              "id": "3",
+              "name": {
+                "value": "cenas",
+                "synonyms": [
+                  "cenar",
+                  "cena"
+                ]
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "almuerzos",
+                "synonyms": [
+                  "almorzar",
+                  "almuerzo"
+                ]
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "desayunos",
+                "synonyms": [
+                  "desayunar",
+                  "desayuno"
+                ]
+              }
+            }
+          ],
+          "name": "dishType"
+        },
+        {
+          "values": [
+            {
+              "id": "23:30",
+              "name": {
+                "value": "23:30",
+                "synonyms": [
+                  "once y treinta de la noche",
+                  "once y media de la noche",
+                  "once y media pm",
+                  "once y treinta pm"
+                ]
+              }
+            },
+            {
+              "id": "23:00",
+              "name": {
+                "value": "23:00",
+                "synonyms": [
+                  "once pm",
+                  "veintres horas",
+                  "once de la noche"
+                ]
+              }
+            },
+            {
+              "id": "22:30",
+              "name": {
+                "value": "22:30",
+                "synonyms": [
+                  "diez y treinta de la noche",
+                  "diez y treinta pm",
+                  "diez y media de la noche",
+                  "diez y media pm"
+                ]
+              }
+            },
+            {
+              "id": "22:00",
+              "name": {
+                "value": "22:00",
+                "synonyms": [
+                  "diez pm",
+                  "diez de la noche",
+                  "22 horas",
+                  "veintidos horas"
+                ]
+              }
+            },
+            {
+              "id": "21:30",
+              "name": {
+                "value": "21:30",
+                "synonyms": [
+                  "nueve y treinta de la noche",
+                  "nueve y treinta pm",
+                  "nueve y media de la noche",
+                  "nueve y media pm"
+                ]
+              }
+            },
+            {
+              "id": "21:00",
+              "name": {
+                "value": "21:00",
+                "synonyms": [
+                  "veintiuno horas",
+                  "21 horas",
+                  " 9 de la noche",
+                  "9 pm",
+                  "nueve pm",
+                  "nueve de la noche"
+                ]
+              }
+            },
+            {
+              "id": "20:30",
+              "name": {
+                "value": "ocho y media pm",
+                "synonyms": [
+                  "ocho y treinta  de la tarde",
+                  "8.30 pm",
+                  "ocho y treinta pm",
+                  "ocho y media pm",
+                  "ocho y media de la noche"
+                ]
+              }
+            },
+            {
+              "id": "20:00",
+              "name": {
+                "value": "20:00",
+                "synonyms": [
+                  "veinte horas",
+                  "ocho de la noche",
+                  "8 pm",
+                  "ocho pm",
+                  "ocho de la noche"
+                ]
+              }
+            },
+            {
+              "id": "19:30",
+              "name": {
+                "value": "19:30",
+                "synonyms": [
+                  "siete y treinta pm",
+                  "siete y media pm",
+                  "siete y treinta de la noche",
+                  "siete y media de la noche"
+                ]
+              }
+            },
+            {
+              "id": "19:00",
+              "name": {
+                "value": "19:00",
+                "synonyms": [
+                  "diecinueve horas",
+                  "19 horas",
+                  "7 de la noche",
+                  "7 pm",
+                  "siete pm",
+                  "siete de la noche"
+                ]
+              }
+            },
+            {
+              "id": "18:30",
+              "name": {
+                "value": "18:30",
+                "synonyms": [
+                  "seis y treinta de la noche",
+                  "seis y media de la noche",
+                  "seis y treinta pm",
+                  "seis y media pm"
+                ]
+              }
+            },
+            {
+              "id": "18:00",
+              "name": {
+                "value": "18:00",
+                "synonyms": [
+                  "16 y 30 horas",
+                  "16 horas",
+                  "6 de la tarde",
+                  "seis de la tarde",
+                  "seis pm",
+                  "6 pm",
+                  "seis pm"
+                ]
+              }
+            },
+            {
+              "id": "17:30",
+              "name": {
+                "value": "17:30",
+                "synonyms": [
+                  "cinco y media pm",
+                  "cinco y treinta pm",
+                  "cinco y treinta de la noche",
+                  "cinco y media de la noche"
+                ]
+              }
+            },
+            {
+              "id": "17:00",
+              "name": {
+                "value": "17:00",
+                "synonyms": [
+                  "17 horas",
+                  "cinco pm",
+                  "5 pm",
+                  "5 de la tarde",
+                  "cinco de la tarde",
+                  "cinco pm",
+                  "5 pm"
+                ]
+              }
+            },
+            {
+              "id": "16:30",
+              "name": {
+                "value": "16:30"
+              }
+            },
+            {
+              "id": "16:00",
+              "name": {
+                "value": "16:00",
+                "synonyms": [
+                  "cuatro de la tarde",
+                  "16 horas",
+                  "4 de la tarde",
+                  "4 pm",
+                  "cuatro pm",
+                  "cuatro de la tarde"
+                ]
+              }
+            },
+            {
+              "id": "15:30",
+              "name": {
+                "value": "15:30"
+              }
+            },
+            {
+              "id": "15:00",
+              "name": {
+                "value": "15:00",
+                "synonyms": [
+                  "3 de la tarde",
+                  "3 pm",
+                  "quince horas",
+                  "15 horas",
+                  "tres pm",
+                  "tres de la tarde"
+                ]
+              }
+            },
+            {
+              "id": "14:30",
+              "name": {
+                "value": "14:30",
+                "synonyms": [
+                  "dos y media pm",
+                  "2 y 30 de la tarde",
+                  "dos y media de la tarde",
+                  "dos y media pm",
+                  "catorce y media pm",
+                  "catorce y treinta"
+                ]
+              }
+            },
+            {
+              "id": "14:00",
+              "name": {
+                "value": "14:00",
+                "synonyms": [
+                  "catorce horas",
+                  "14 horas",
+                  "2 de la tarde",
+                  "2 pm",
+                  "dos pm",
+                  "dos de la tarde"
+                ]
+              }
+            },
+            {
+              "id": "13:30",
+              "name": {
+                "value": "13:30"
+              }
+            },
+            {
+              "id": "13:00",
+              "name": {
+                "value": "13:00",
+                "synonyms": [
+                  "1 de la tarde",
+                  "1 de la tarde",
+                  "1 pm",
+                  "una pm",
+                  "13 horas",
+                  "trece horas",
+                  "una de la tarde"
+                ]
+              }
+            },
+            {
+              "id": "12:30",
+              "name": {
+                "value": "12:30"
+              }
+            },
+            {
+              "id": "12:00",
+              "name": {
+                "value": "12:00",
+                "synonyms": [
+                  "doce",
+                  "doce pm",
+                  "12 pm",
+                  "12 de la tarde",
+                  "doce horas",
+                  "doce",
+                  "doce de la tarde",
+                  "mitad del dia",
+                  "medio dia"
+                ]
+              }
+            },
+            {
+              "id": "11:30",
+              "name": {
+                "value": "11:30"
+              }
+            },
+            {
+              "id": "11:00",
+              "name": {
+                "value": "11:00",
+                "synonyms": [
+                  "11 horas",
+                  "once horas",
+                  "una hora antes del medio dia",
+                  "1 hora antes del mediodia",
+                  "11 de la mañana",
+                  "11 am",
+                  "once am",
+                  "once de la mañana"
+                ]
+              }
+            },
+            {
+              "id": "10:30",
+              "name": {
+                "value": "10:30",
+                "synonyms": [
+                  "a las diez horas con treinta minutos",
+                  "diez y treinta de la mañana",
+                  "diez y media de la mañana",
+                  "diez y treinta am",
+                  "diez y media am",
+                  "10 y media am"
+                ]
+              }
+            },
+            {
+              "id": "10:00",
+              "name": {
+                "value": "10:00",
+                "synonyms": [
+                  "10 de la mañana",
+                  "10 am",
+                  "diez am",
+                  "10 horas",
+                  "diez horas",
+                  "diez de la mañana",
+                  "diez am"
+                ]
+              }
+            },
+            {
+              "id": "9:30",
+              "name": {
+                "value": "9:30"
+              }
+            },
+            {
+              "id": "9:00",
+              "name": {
+                "value": "9:00"
+              }
+            },
+            {
+              "id": "8:30",
+              "name": {
+                "value": "8:30"
+              }
+            },
+            {
+              "id": "8:00",
+              "name": {
+                "value": "8:00"
+              }
+            },
+            {
+              "id": "7:30",
+              "name": {
+                "value": "7:30"
+              }
+            },
+            {
+              "id": "7:00",
+              "name": {
+                "value": "7:00"
+              }
+            },
+            {
+              "id": "6:30",
+              "name": {
+                "value": "6:30"
+              }
+            },
+            {
+              "id": "6:00",
+              "name": {
+                "value": "6:00"
+              }
+            },
+            {
+              "id": "5:30",
+              "name": {
+                "value": "5:30"
+              }
+            },
+            {
+              "id": "5:00",
+              "name": {
+                "value": "5:00"
+              }
+            },
+            {
+              "id": "4:30",
+              "name": {
+                "value": "4:30"
+              }
+            },
+            {
+              "id": "4:00",
+              "name": {
+                "value": "4:00"
+              }
+            },
+            {
+              "id": "3:30",
+              "name": {
+                "value": "3:30"
+              }
+            },
+            {
+              "id": "3:00",
+              "name": {
+                "value": "3:00"
+              }
+            },
+            {
+              "id": "2:30",
+              "name": {
+                "value": "2:30"
+              }
+            },
+            {
+              "id": "2:00",
+              "name": {
+                "value": "2:00",
+                "synonyms": [
+                  "dos de la madrugada",
+                  "2 am",
+                  "dos am",
+                  "dos de la mañana"
+                ]
+              }
+            },
+            {
+              "id": "1:30",
+              "name": {
+                "value": "1:30",
+                "synonyms": [
+                  "una y treinta pm",
+                  "una y media pm",
+                  "una y treinta de la mañana",
+                  "una y treinta de la madrugada",
+                  "1:30 am",
+                  "una y media am",
+                  "una y media de la mañana",
+                  "una y treinta de la mañana",
+                  "una y media"
+                ]
+              }
+            },
+            {
+              "id": "1:00",
+              "name": {
+                "value": "1:00",
+                "synonyms": [
+                  "una am",
+                  "una de la madrugada",
+                  "1 am",
+                  "una de la mañana"
+                ]
+              }
+            }
+          ],
+          "name": "bookingTime"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "teatro"
+              }
+            },
+            {
+              "name": {
+                "value": "charlas"
+              }
+            },
+            {
+              "name": {
+                "value": "moda"
+              }
+            },
+            {
+              "name": {
+                "value": "arte"
+              }
+            },
+            {
+              "name": {
+                "value": "musica"
+              }
+            }
+          ],
+          "name": "eventType"
+        },
+        {
+          "values": [
+            {
+              "id": "3",
+              "name": {
+                "value": "portugues",
+                "synonyms": [
+                  "portugues",
+                  "portuguese",
+                  "portugués"
+                ]
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "ingles",
+                "synonyms": [
+                  "english",
+                  "inglés"
+                ]
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "español",
+                "synonyms": [
+                  "spanish",
+                  "español"
+                ]
+              }
+            }
+          ],
+          "name": "language"
+        },
+        {
+          "values": [
+            {
+              "id": "3",
+              "name": {
+                "value": "Euros",
+                "synonyms": [
+                  "euros",
+                  "euro"
+                ]
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "Dólares",
+                "synonyms": [
+                  "dolar americano",
+                  "dolar",
+                  "dolares"
+                ]
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "Soles",
+                "synonyms": [
+                  "nuevo sol",
+                  "sol",
+                  "nuevos soles",
+                  "soles"
+                ]
+              }
+            }
+          ],
+          "name": "currencyType"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "BookingServicesIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "serviceType",
+              "type": "Service",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.461784500451.1401963331913"
+              }
+            },
+            {
+              "name": "serviceName",
+              "type": "AMAZON.Corporation",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "dishType",
+              "type": "AMAZON.Food",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "date",
+              "type": "AMAZON.DATE",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "hour",
+              "type": "bookingTime",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {},
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1198953839927.913204111456.16799133961"
+                }
+              ]
+            },
+            {
+              "name": "confirm",
+              "type": "Confirm",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "ListServiceIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "service",
+              "type": "Service",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "startBooking",
+              "type": "Confirm",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "serviceName",
+              "type": "AMAZON.Corporation",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "date",
+              "type": "AMAZON.DATE",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "time",
+              "type": "bookingTime",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {},
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.675835342668.92722919283.219242883070"
+                }
+              ]
+            },
+            {
+              "name": "confirm",
+              "type": "Confirm",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {},
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.635401038851.1325229908723.493650537839"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ChangeLanguageIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "language",
+              "type": "AMAZON.Language",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "ChangeCurrencyIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "currencyType",
+              "type": "AMAZON.Corporation",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.461784500451.1401963331913",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿cuál es el tipo de servicio que deseas reservar?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.675835342668.92722919283.219242883070",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Lo siento, no he podido comprenderle. ¿Cuál es la hora de la reserva?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Lo lamento, no le he entendido. ¿Cuál es la hora de la reserva?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.635401038851.1325229908723.493650537839",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Lo lamento, no le he compredido. Puedes decir  Sí para confirmar o  No  para rechazar. Entonces, ¿cuál es su respuesta?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1198953839927.913204111456.16799133961",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Lo siento, no he podido comprenderle. ¿Cuál es la hora de la reserva?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Lo lamento no le he comprendido. ¿Cuál es la hora de la reserva?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1321173056288.343385250031.1130156754524",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Cuál es el tipo de evento que deseas visualizar?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.845647420131.1207367287415.1308971605348",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Lo lamento el tipo de moneda {currencyType} no esta disponible. Los tipos de moneda disponibles son soles, dólares y euros. ¿Cuál es el tipo de moneda  al que deseas cambiar?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "138"
+}

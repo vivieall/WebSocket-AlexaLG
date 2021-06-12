@@ -4,8 +4,8 @@
 const Alexa = require('ask-sdk-core');
 const WebSocket = require('ws');
 const fetch = require('node-fetch');
-const baseUrl = 'wss://socket-alexa-lg.herokuapp.com'; 
-const baseUrlAPI = 'http://backendtesis-env-3.eba-5sa2fpip.us-east-1.elasticbeanstalk.com/api';
+const baseUrl = 'wss://socket-app-ws.herokuapp.com';
+const baseUrlAPI = 'https://ires2-tesis-backend.herokuapp.com/api/v1';
 var constants = require("./constants/constants.js");
 var utils = require("./utils/util.js");
 
@@ -116,7 +116,7 @@ const YesIntentHandler = {
                         
                     }
                     console.log(body);
-                    const transactionResult = utils.post(`${baseUrlAPI}/venta`, body);
+                    const transactionResult = utils.post(`${baseUrlAPI}/transactions`, body);
                     speakOutput = `<speak>
                                     Se ha procesado su subscripción. En pocos minutos un administrador se contactará con usted para brindarle las credenciales correspondientes a su subscripción. 
                                     Recuerda que para ver tu historial diga "Muéstrame mi historial de compras". <break time="0.05s"/>
@@ -392,27 +392,27 @@ const CompletedListServiceIntentHandler = {
         
         switch (service) {
         case 'restaurantes':
-            getServiceUrl = `${baseUrlAPI}/idtiposervicio/d08f1124-2319-4bbe-8732-e3ead7d53beb`;
+            getServiceUrl = `${baseUrlAPI}/restaurants`;
             serviceType = 'restaurantes';
         break;
         case 'restaurante':
-            getServiceUrl = `${baseUrlAPI}/idtiposervicio/d08f1124-2319-4bbe-8732-e3ead7d53beb`;
+            getServiceUrl = `${baseUrlAPI}/restaurants`;
             serviceType = 'restaurantes';
         break;
         case 'spas':
-            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/e7887cbf-289d-4fe1-ae19-9a318efe9033`;
+            getServiceUrl = `${baseUrlAPI}/spas`;
             serviceType = 'spas';
         break;
         case 'spa':
-            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/e7887cbf-289d-4fe1-ae19-9a318efe9033`;
+            getServiceUrl = `${baseUrlAPI}/spas`;
             serviceType = 'spas';
         break;
         case 'gimnasios':
-            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/e7887cbf-289d-4fe1-ae19-9a318efe9033 `;
+            getServiceUrl = `${baseUrlAPI}/gyms`;
             serviceType = 'gimnasios';
         break;
         case 'gimnasio':
-            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/e7887cbf-289d-4fe1-ae19-9a318efe9033 `;
+            getServiceUrl = `${baseUrlAPI}/gyms`;
             serviceType = 'gimnasios';
         break;
         case 'eventos':
@@ -491,13 +491,13 @@ const StartedInProgressFindServiceIntentHandler = {
         
         switch (service) {
         case 'restaurante':
-            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/d08f1124-2319-4bbe-8732-e3ead7d53beb `
+            getServiceUrl = `${baseUrlAPI}/restaurants`
         break;
         case 'spa':
-            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/e7887cbf-289d-4fe1-ae19-9a318efe9033`
+            getServiceUrl = `${baseUrlAPI}/spas`
         break;
         case 'gimnasio':
-            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/e7887cbf-289d-4fe1-ae19-9a318efe9033 `
+            getServiceUrl = `${baseUrlAPI}/gyms`
         break;
         case 'evento':
             getServiceUrl = `${baseUrlAPI}/events`
@@ -557,15 +557,15 @@ const CompletedFindServiceIntentHandler = {
         
         switch (service) {
         case 'restaurante':
-            baseServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/d08f1124-2319-4bbe-8732-e3ead7d53beb`
+            baseServiceUrl = `${baseUrlAPI}/restaurants`
             getServiceUrl = `${baseUrlAPI}/restaurants?name=${name}`
         break;
         case 'spa':
-            baseServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/e7887cbf-289d-4fe1-ae19-9a318efe9033`
+            baseServiceUrl = `${baseUrlAPI}/spas`
             getServiceUrl = `${baseUrlAPI}/spas?name=${name}`
         break;
         case 'gimnasio':
-            baseServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/e7887cbf-289d-4fe1-ae19-9a318efe9033`
+            baseServiceUrl = `${baseUrlAPI}/gyms`
             getServiceUrl = `${baseUrlAPI}/gyms?name=${name}`
         break;
         case 'evento':
@@ -1334,7 +1334,7 @@ const ChangeNewsTopicIntentHandler = {
             }catch(ex){
                 console.log(`error: ${ex}`);
                 const speakOutput = `Lo siento, ha ocurrido un error inesperado y no se ha podido procesar su solicitud. Por favor, 
-                comuniquese con el administrador al siguiente al numero 911`;
+                comuniquese con el administrador al siguiente al numero 945433992`;
                 return handlerInput.responseBuilder
                 .speak(ex)
                 .reprompt(ex)
@@ -1418,7 +1418,7 @@ const StoreProductIntentHandler = {
         }catch(ex){
             console.log(`error: ${ex}`);
             const speakOutput = `Lo siento, ha ocurrido un error inesperado y no se ha podido procesar su solicitud. Por favor, 
-            comuniquese con el administrador al siguiente al numero 911`;
+            comuniquese con el administrador al siguiente al numero 945433992`;
             return handlerInput.responseBuilder
             .speak(ex)
             .reprompt(ex)
