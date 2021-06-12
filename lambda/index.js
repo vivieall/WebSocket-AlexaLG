@@ -4,8 +4,8 @@
 const Alexa = require('ask-sdk-core');
 const WebSocket = require('ws');
 const fetch = require('node-fetch');
-const baseUrl = 'wss://socket-app-ws.herokuapp.com';
-const baseUrlAPI = 'https://ires2-tesis-backend.herokuapp.com/api/v1';
+const baseUrl = 'wss://socket-alexa-lg.herokuapp.com'; 
+const baseUrlAPI = 'http://backendtesis-env-3.eba-5sa2fpip.us-east-1.elasticbeanstalk.com/api';
 var constants = require("./constants/constants.js");
 var utils = require("./utils/util.js");
 
@@ -32,7 +32,6 @@ const LaunchRequestHandler = {
             .getResponse();
     }
 };
-
 
 
 const YesIntentHandler = {
@@ -116,7 +115,7 @@ const YesIntentHandler = {
                         
                     }
                     console.log(body);
-                    const transactionResult = utils.post(`${baseUrlAPI}/transactions`, body);
+                    const transactionResult = utils.post(`${baseUrlAPI}/venta`, body);
                     speakOutput = `<speak>
                                     Se ha procesado su subscripción. En pocos minutos un administrador se contactará con usted para brindarle las credenciales correspondientes a su subscripción. 
                                     Recuerda que para ver tu historial diga "Muéstrame mi historial de compras". <break time="0.05s"/>
@@ -214,7 +213,7 @@ const HelloWorldIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'HelloWorldIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'Hello World!';
+        const speakOutput = '¿Qué desea realizar en nuestro sistema de entretenimiento?';
         return handlerInput.responseBuilder
             .speak(speakOutput)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
@@ -308,7 +307,7 @@ const ErrorHandler = {
     },
     handle(handlerInput, error) {
         console.log(`~~~~ Error handled: ${error.stack}`);
-        const speakOutput = `Sorry, I had trouble doing what you asked. Please try again.`;
+        const speakOutput = `Disculpa, no entendí tu solicitud. Inténtalo nuevamente.`;
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -318,18 +317,16 @@ const ErrorHandler = {
 };
 
 
-
-
 const StartedInProgressListServiceIntentHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
             && handlerInput.requestEnvelope.request.intent.name === 'ListServiceIntent'
-            && !handlerInput.requestEnvelope.request.intent.slots.service.value
+           && !handlerInput.requestEnvelope.request.intent.slots.service.value
     },
     handle(handlerInput){
         return handlerInput.responseBuilder
-          .speak('Los servicios disponibles son los siguientes: restaurantes, gimnasios, spas, eventos e instalaciones del hotel. ¿Qué servicio deseas visualizar?')
-          .reprompt('Los servicios disponibles son los siguientes: restaurantes, gimnasios, spas, eventos e instalaciones del hotel. ¿Qué servicio deseas visualizar?')
+          .speak('Los servicios disponibles son los siguientes: restaurantes, gimnasios y spas. ¿Qué servicio deseas visualizar?')
+          .reprompt('Los servicios disponibles son los siguientes: restaurantes, gimnasios y spas. ¿Qué servicio deseas visualizar?')
           .addElicitSlotDirective('service')
           .getResponse();
     }
@@ -392,27 +389,27 @@ const CompletedListServiceIntentHandler = {
         
         switch (service) {
         case 'restaurantes':
-            getServiceUrl = `${baseUrlAPI}/restaurants`;
+            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/d08f1124-2319-4bbe-8732-e3ead7d53beb`;
             serviceType = 'restaurantes';
         break;
         case 'restaurante':
-            getServiceUrl = `${baseUrlAPI}/restaurants`;
+            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/d08f1124-2319-4bbe-8732-e3ead7d53beb`;
             serviceType = 'restaurantes';
         break;
         case 'spas':
-            getServiceUrl = `${baseUrlAPI}/spas`;
+            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/e7887cbf-289d-4fe1-ae19-9a318efe9033`;
             serviceType = 'spas';
         break;
         case 'spa':
-            getServiceUrl = `${baseUrlAPI}/spas`;
+            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/e7887cbf-289d-4fe1-ae19-9a318efe9033`;
             serviceType = 'spas';
         break;
         case 'gimnasios':
-            getServiceUrl = `${baseUrlAPI}/gyms`;
+            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/d08f1124-2319-4bbe-8732-e3ead7d53beb`;
             serviceType = 'gimnasios';
         break;
         case 'gimnasio':
-            getServiceUrl = `${baseUrlAPI}/gyms`;
+            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/d08f1124-2319-4bbe-8732-e3ead7d53beb`;
             serviceType = 'gimnasios';
         break;
         case 'eventos':
@@ -491,13 +488,13 @@ const StartedInProgressFindServiceIntentHandler = {
         
         switch (service) {
         case 'restaurante':
-            getServiceUrl = `${baseUrlAPI}/restaurants`
+            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/d08f1124-2319-4bbe-8732-e3ead7d53beb `
         break;
         case 'spa':
-            getServiceUrl = `${baseUrlAPI}/spas`
+            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/e7887cbf-289d-4fe1-ae19-9a318efe9033`
         break;
         case 'gimnasio':
-            getServiceUrl = `${baseUrlAPI}/gyms`
+            getServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/d08f1124-2319-4bbe-8732-e3ead7d53beb`
         break;
         case 'evento':
             getServiceUrl = `${baseUrlAPI}/events`
@@ -557,15 +554,15 @@ const CompletedFindServiceIntentHandler = {
         
         switch (service) {
         case 'restaurante':
-            baseServiceUrl = `${baseUrlAPI}/restaurants`
+            baseServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/d08f1124-2319-4bbe-8732-e3ead7d53beb`
             getServiceUrl = `${baseUrlAPI}/restaurants?name=${name}`
         break;
         case 'spa':
-            baseServiceUrl = `${baseUrlAPI}/spas`
+            baseServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/e7887cbf-289d-4fe1-ae19-9a318efe9033`
             getServiceUrl = `${baseUrlAPI}/spas?name=${name}`
         break;
         case 'gimnasio':
-            baseServiceUrl = `${baseUrlAPI}/gyms`
+            baseServiceUrl = `${baseUrlAPI}/servicio/idtiposervicio/d08f1124-2319-4bbe-8732-e3ead7d53beb`
             getServiceUrl = `${baseUrlAPI}/gyms?name=${name}`
         break;
         case 'evento':
@@ -752,7 +749,9 @@ const BookingServiceGetDateIntentHandler = {
         break;
     } 
     console.log(serviceType);
-    let fetchUrl = `https://ires2-tesis-backend.herokuapp.com/api/v1/${serviceType}`
+    //Reservar restaurante
+    let fetchUrl = `http://backendtesis-env-3.eba-5sa2fpip.us-east-1.elasticbeanstalk.com/api/d08f1124-2319-4bbe-8732-e3ead7d53beb`
+    //{serviceType}`
     try{
         let json = await getDataAsync(fetchUrl);
         console.log(json);
@@ -1334,7 +1333,7 @@ const ChangeNewsTopicIntentHandler = {
             }catch(ex){
                 console.log(`error: ${ex}`);
                 const speakOutput = `Lo siento, ha ocurrido un error inesperado y no se ha podido procesar su solicitud. Por favor, 
-                comuniquese con el administrador al siguiente al numero 945433992`;
+                comuniquese con el administrador al siguiente al numero 911`;
                 return handlerInput.responseBuilder
                 .speak(ex)
                 .reprompt(ex)
@@ -1418,7 +1417,7 @@ const StoreProductIntentHandler = {
         }catch(ex){
             console.log(`error: ${ex}`);
             const speakOutput = `Lo siento, ha ocurrido un error inesperado y no se ha podido procesar su solicitud. Por favor, 
-            comuniquese con el administrador al siguiente al numero 945433992`;
+            comuniquese con el administrador al siguiente al numero 911`;
             return handlerInput.responseBuilder
             .speak(ex)
             .reprompt(ex)

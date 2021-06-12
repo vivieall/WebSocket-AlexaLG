@@ -1,13 +1,13 @@
 
-const WS_BASE_URL = "https://ires2-tesis-backend.herokuapp.com/api/v1";
-const SOCKET_URL = "wss://socket-app-ws.herokuapp.com";
+const WS_BASE_URL = "http://backendtesis-env-3.eba-5sa2fpip.us-east-1.elasticbeanstalk.com/api";
+const SOCKET_URL = "wss://socket-alexa-lg.herokuapp.com";
 
 const GUEST_ID = 1;
 const ENDPOINT_EVENTS = `${WS_BASE_URL}/events`;
-const ENDPOINT_GYMS = `${WS_BASE_URL}/gyms`;
-const ENDPOINT_SPAS = `${WS_BASE_URL}/spas`;
+const ENDPOINT_GYMS = `${WS_BASE_URL}/servicio/idtiposervicio/d08f1124-2319-4bbe-8732-e3ead7d53beb`;
+const ENDPOINT_SPAS = `${WS_BASE_URL}/servicio/idtiposervicio/e7887cbf-289d-4fe1-ae19-9a318efe9033`;
 const ENDPOINT_FACILITIES = `${WS_BASE_URL}/locals`;
-const ENDPOINT_RESTAURANTS = `${WS_BASE_URL}/restaurants`;
+const ENDPOINT_RESTAURANTS = `${WS_BASE_URL}/servicio/idtiposervicio/d08f1124-2319-4bbe-8732-e3ead7d53beb`;
 const ENDPOINT_DISHES = `${WS_BASE_URL}/dishes`; 
 const ENDPOINT_DISH_TYPES = `${WS_BASE_URL}/dish-types`;
 const ENDPOINT_PRODUCT_CATEGORIES = `${WS_BASE_URL}/product-categories`;
