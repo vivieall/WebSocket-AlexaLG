@@ -1,5 +1,5 @@
 {
-  "name": "socket-app",
+  "name": "socket-app-lg",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,8 +10,11 @@
   "author": "recurso tdp",
   "license": "ISC",
   "dependencies": {
+    "ask-sdk": "^2.10.2",
+    "ask-sdk-core": "^2.10.2",
+    "ask-sdk-model": "^1.35.1",
+    "ask-sdk-s3-persistence-adapter": "^2.10.2",
     "express": "^4.17.1",
-    "ws": "^7.2.3",
-    "socket.io": "^2.3.0"
+    "ws": "^7.2.3"
   }
 }
